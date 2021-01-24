@@ -1,0 +1,33 @@
+{
+    "name": "HeadControls",
+    "maps": [
+        {
+            "name": "Mouse",
+            "id": "d403c045-c904-4fd1-be1d-a7d5b5e88015",
+            "actions": [
+                {
+                    "name": "View",
+                    "type": "PassThrough",
+                    "id": "77ef3226-60e4-4b2f-833a-f093e101f195",
+                    "expectedControlType": "Vector2",
+                    "processors": "",
+                    "interactions": ""
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "5177975e-266b-4c06-8bf2-f9fa3b6aca09",
+                    "path": "<Mouse>/delta",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "View",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
+        }
+    ],
+    "controlSchemes": []
+}
