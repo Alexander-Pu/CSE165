@@ -10,6 +10,8 @@ public class ZombieChecker : MonoBehaviour
     float secondsOnZombie;
     [SerializeField]
     Image radialProgressBar;
+    [SerializeField]
+    Image reticle;
 
     private void Start() {
         layerMask = 1 << 8;
@@ -26,12 +28,15 @@ public class ZombieChecker : MonoBehaviour
 
             if (!mask.isMasked()) {
                 handleUnmaskedZombie(hitZombie, mask);
+                reticle.color = Color.green;
             } else {
                 radialProgressBar.fillAmount = 0;
+                reticle.color = Color.white;
             }
         } else {
             radialProgressBar.fillAmount = 0;
             currentZombie = null;
+            reticle.color = Color.white;
         }
     }
 

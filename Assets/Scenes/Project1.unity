@@ -1179,7 +1179,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   prefab: {fileID: 2503568659791556180, guid: ec55c1823f471b6469234351eaf447ad, type: 3}
-  spawnRate: 2.1
+  spawnRate: 2.2
 --- !u!1 &1578179787 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 2541665784067831607, guid: b094162b6b7ecd44f83ebfec9f9fe60b,
@@ -1199,6 +1199,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   radialProgressBar: {fileID: 1102778138}
+  reticle: {fileID: 2139612969}
 --- !u!1 &1901219926
 GameObject:
   m_ObjectHideFlags: 0
