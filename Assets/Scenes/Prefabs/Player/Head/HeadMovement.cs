@@ -7,12 +7,18 @@ public class HeadMovement : MonoBehaviour
 {
     [SerializeField]
     float lookSensitivity = 10;
+    bool headMovementEnabled = false;
+
     private void Start() {
-        Cursor.lockState = CursorLockMode.Locked;
-        Cursor.visible = false;
+        HandleDisabled();
     }
 
     public void Look(InputAction.CallbackContext context) {
+        if (!headMovementEnabled) {
+            return;
+        }
+
+
         Vector2 look = lookSensitivity * Time.deltaTime * context.ReadValue<Vector2>();
 
         if (look.x != 0) {
@@ -25,5 +31,25 @@ public class HeadMovement : MonoBehaviour
 
             this.transform.Rotate(rotationAxis, Space.World);
         }
+    }
+
+    public void EnableHeadMovement(InputAction.CallbackContext context) {
+        headMovementEnabled = !headMovementEnabled;
+
+        if (headMovementEnabled) {
+            HandleEnabled();
+        } else {
+            HandleDisabled();
+        }
+    }
+
+    private void HandleEnabled() {
+        Cursor.lockState = CursorLockMode.Locked;
+        Cursor.visible = false;
+    }
+
+    private void HandleDisabled() {
+        Cursor.lockState = CursorLockMode.None;
+        Cursor.visible = true;
     }
 }
