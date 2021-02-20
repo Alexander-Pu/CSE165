@@ -1,0 +1,27 @@
+ManifestFileVersion: 0
+CRC: 2528483152
+Hashes:
+  AssetFileHash:
+    serializedVersion: 2
+    Hash: a53a5ec27b52035cbc95bb557c66e97d
+  TypeTreeHash:
+    serializedVersion: 2
+    Hash: 22357172b8cea85847937e8f62d0c077
+HashAppended: 0
+ClassTypes:
+- Class: 21
+  Script: {instanceID: 0}
+- Class: 28
+  Script: {instanceID: 0}
+- Class: 48
+  Script: {instanceID: 0}
+SerializeReferenceClassIdentifiers: []
+Assets:
+- Assets/Oculus/VR/Materials/CubeMaterial.mat
+- Assets/Oculus/VR/Meshes/OculusTouchForQuest2/Materials/OculusTouchForQuest2_Left.mat
+- Assets/Oculus/VR/Meshes/OculusTouchForRift/Materials/OculusTouchForRift_Material.mat
+- Assets/Oculus/VR/Meshes/OculusTouchForQuest2/Materials/OculusTouchForQuest2_Right.mat
+- Assets/Oculus/VR/Meshes/OculusTouchForQuestAndRiftS/Materials/OculusTouchForQuestAndRiftS_Material.mat
+Dependencies:
+- C:/Users/Alex Pu/Desktop/Unity Projects/CSE165/OVRAssetBundles/OVRMasterBundle/asset_png0
+- C:/Users/Alex Pu/Desktop/Unity Projects/CSE165/OVRAssetBundles/OVRMasterBundle/asset_tga0
