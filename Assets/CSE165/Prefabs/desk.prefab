@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 986780669562907572}
   - component: {fileID: 1064749910115883178}
   - component: {fileID: 9068283879695957043}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Mesh9
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -91,7 +91,7 @@ GameObject:
   - component: {fileID: 3090519203928281313}
   - component: {fileID: 8184288448937982200}
   - component: {fileID: 2559400929506655209}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Mesh6
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -169,7 +169,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5575340575178837004}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Group1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -206,7 +206,7 @@ GameObject:
   - component: {fileID: 5085707542289001638}
   - component: {fileID: 3893049525819737846}
   - component: {fileID: 871215238450156375}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Mesh1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -286,7 +286,7 @@ GameObject:
   - component: {fileID: 382373060047751330}
   - component: {fileID: 973227872934400698}
   - component: {fileID: 5723421547458387629}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Mesh18
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -364,7 +364,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2743355871576131976}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Group14
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -395,7 +395,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3906734720397618481}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Computer2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -433,7 +433,7 @@ GameObject:
   - component: {fileID: 5087746586319547318}
   - component: {fileID: 5896761112205336437}
   - component: {fileID: 3701239522255025847}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Mesh7
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -511,7 +511,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8152483211609755286}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Group15
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -542,7 +542,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4048181371056296843}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Group10
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -573,7 +573,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4812312659563610823}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Keyboard1_1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -606,7 +606,7 @@ GameObject:
   - component: {fileID: 101287050482283800}
   - component: {fileID: 3348645383539208087}
   - component: {fileID: 8203942151306272160}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Mesh8
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -686,7 +686,7 @@ GameObject:
   - component: {fileID: 8209776446260803339}
   - component: {fileID: 3147762975318387903}
   - component: {fileID: 5780226099711787207}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Mesh16
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -764,7 +764,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4774565396442546641}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Group4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -798,7 +798,7 @@ GameObject:
   - component: {fileID: 2090383819990831273}
   - component: {fileID: 6735274017994849305}
   - component: {fileID: 4036753616913854196}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Mesh21
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -876,7 +876,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2708416223108858385}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Computer1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -912,7 +912,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4815397551629118155}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Group9
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -943,7 +943,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5056561070172914916}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Obj_000001_1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -976,7 +976,7 @@ GameObject:
   - component: {fileID: 3453356635225023895}
   - component: {fileID: 4069728310027157445}
   - component: {fileID: 653275264945566183}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Mesh23
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1053,7 +1053,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5195584356249406835}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Group11
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1086,7 +1086,7 @@ GameObject:
   - component: {fileID: 1696147547580295792}
   - component: {fileID: 5037388132576106287}
   - component: {fileID: 5073967851972021566}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Mesh11
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1164,7 +1164,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6099458277741730892}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: skphNnOU8_1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1196,7 +1196,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6028651340758059472}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Group7
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1230,7 +1230,7 @@ GameObject:
   - component: {fileID: 3146835985058210459}
   - component: {fileID: 2851455407927604617}
   - component: {fileID: 4066711835136379856}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Mesh5
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1310,7 +1310,7 @@ GameObject:
   - component: {fileID: 7918222759767464747}
   - component: {fileID: 8650291509931228095}
   - component: {fileID: 4800127073709475326}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Mesh22
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1388,7 +1388,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8003671324870133330}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Group13
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1421,7 +1421,7 @@ GameObject:
   - component: {fileID: 9016044131023514020}
   - component: {fileID: 6821626407662222290}
   - component: {fileID: 6401489335433724761}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Mesh19
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1498,7 +1498,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 477953021960172412}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Group18
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1531,7 +1531,7 @@ GameObject:
   - component: {fileID: 5310038004644416151}
   - component: {fileID: 4470245282713340996}
   - component: {fileID: 7402817529475303826}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Mesh2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1611,7 +1611,7 @@ GameObject:
   - component: {fileID: 1062905172685577709}
   - component: {fileID: 699128789538786563}
   - component: {fileID: 324282250823288563}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Mesh14
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1689,7 +1689,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4509308033508090577}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Obj_000002_1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1723,7 +1723,8 @@ GameObject:
   - component: {fileID: 7516127832315720266}
   - component: {fileID: 4444831528738951492}
   - component: {fileID: 4432177443480580579}
-  m_Layer: 0
+  - component: {fileID: 6308669725240231450}
+  m_Layer: 8
   m_Name: desk
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1787,6 +1788,24 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!114 &6308669725240231450
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5348940005229493361}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5fea29bb7c508c244a1f805a5fd3fc4d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  outlineMode: 0
+  outlineColor: {r: 1, g: 0, b: 0, a: 1}
+  outlineWidth: 0
+  precomputeOutline: 0
+  bakeKeys: []
+  bakeValues: []
 --- !u!1 &5522453095900150869
 GameObject:
   m_ObjectHideFlags: 0
@@ -1796,7 +1815,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7123271885593675801}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: oculus_rift2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1827,7 +1846,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5488858250474171374}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Group16
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1860,7 +1879,7 @@ GameObject:
   - component: {fileID: 6180821606696645792}
   - component: {fileID: 242587707753859426}
   - component: {fileID: 8262903672657553405}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Mesh10
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1938,7 +1957,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6227609563942134188}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Obj_000002_2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1969,7 +1988,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3422881182908578965}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Group2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2006,7 +2025,7 @@ GameObject:
   - component: {fileID: 4362233927258938409}
   - component: {fileID: 5873943396931017861}
   - component: {fileID: 1678594845509337699}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Mesh15
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2084,7 +2103,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1371243323964101874}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: oculus_rift1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2117,7 +2136,7 @@ GameObject:
   - component: {fileID: 1016834637973400825}
   - component: {fileID: 3017882342873371397}
   - component: {fileID: 6946762599303110756}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Mesh17
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2195,7 +2214,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6586624777975551164}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Group3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2228,7 +2247,7 @@ GameObject:
   - component: {fileID: 2843991756957942151}
   - component: {fileID: 4306316193410164761}
   - component: {fileID: 6221165242208071703}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Mesh13
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2308,7 +2327,7 @@ GameObject:
   - component: {fileID: 4713142527523351107}
   - component: {fileID: 5494407436522261594}
   - component: {fileID: 6344257510150730924}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Mesh12
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2386,7 +2405,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7877557460051999330}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Group8
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2417,7 +2436,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8008075556683395243}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Group6
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2448,7 +2467,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 754944872123616559}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Keyboard1_2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2479,7 +2498,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6966978265610764039}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Group12
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2512,7 +2531,7 @@ GameObject:
   - component: {fileID: 6204085293967404837}
   - component: {fileID: 1593980695864822602}
   - component: {fileID: 4736454390512740666}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Mesh4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2590,7 +2609,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7204547289636628831}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Group17
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2621,7 +2640,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3109535305036824732}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Keyboard__Computer_2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2652,7 +2671,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1771838155886631815}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: skphNnOU8_2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2684,7 +2703,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 517214789554817040}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Obj_000001_2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2715,7 +2734,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 766975716951455284}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Group5
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2746,7 +2765,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1064207734926875176}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Group19
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2779,7 +2798,7 @@ GameObject:
   - component: {fileID: 6807754993756009518}
   - component: {fileID: 758366486181680111}
   - component: {fileID: 6158761000041424859}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Mesh20
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2857,7 +2876,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4392752627314223452}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Keyboard__Computer_1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2890,7 +2909,7 @@ GameObject:
   - component: {fileID: 5166321384587115194}
   - component: {fileID: 4390264037401953245}
   - component: {fileID: 7201952011132443601}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Mesh3
   m_TagString: Untagged
   m_Icon: {fileID: 0}

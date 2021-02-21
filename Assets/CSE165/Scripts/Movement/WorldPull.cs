@@ -5,79 +5,83 @@ using UnityEngine;
 public class WorldPull : MonoBehaviour
 {
     [SerializeField]
-    private Transform pulledTransform;
+    private Transform manipulatedTransform;
     [SerializeField]
     private Transform leftAnchor;
     [SerializeField]
     private Transform rightAnchor;
     [SerializeField]
     private float translateMultiplier = 5;
+    [SerializeField]
+    private float rotationMuliplier = 1;
+    
+    private Vector3 prevLeftWorld;
+    private Vector3 prevRightWorld;
+    private Vector3 prevLeftLocal;
+    private Vector3 prevRightLocal;
+    private float leftVal = 0;
+    private float rightVal = 0;
+    private bool canTranslate = false;
 
-    private Vector3 prevAnchorPosition;
-    private Transform referenceAnchor = null;
-    private float prevLeftVal = 0;
-    private float prevRightVal = 0;
+    void Start()
+    {
+        UpdatePositions();
+    }
 
     // Update is called once per frame
     void Update()
     {
-        float leftVal = OVRInput.Get(OVRInput.Axis1D.PrimaryHandTrigger, OVRInput.Controller.LTouch);
-        float rightVal = OVRInput.Get(OVRInput.Axis1D.PrimaryHandTrigger, OVRInput.Controller.RTouch);
+        leftVal = OVRInput.Get(OVRInput.Axis1D.PrimaryHandTrigger, OVRInput.Controller.LTouch);
+        rightVal = OVRInput.Get(OVRInput.Axis1D.PrimaryHandTrigger, OVRInput.Controller.RTouch);
 
-        // Nothing to do if neither grips are active
-        // OR
-        // Clear values if either of the grips are released
-        // This makes it stutter for a frame, but it's not really noticable
-        if ((0 == leftVal && 0 == rightVal) || 
-            (IsNewRelease(prevLeftVal, leftVal) || IsNewRelease(prevRightVal, rightVal)))
+        if (0 == leftVal && 0 == rightVal) {
+            // Reset. Let translate happen
+            canTranslate = true;
+        } else if (canTranslate && (0 == leftVal || 0 == rightVal))
         {
-            UpdateValues(0, 0);
-            return;
+            // Handle single hand grab case
+            if (0 != rightVal)
+            {
+                HandleTranslation(rightAnchor, prevRightWorld);
+            } else
+            {
+                HandleTranslation(leftAnchor, prevLeftWorld);
+            }
+            
+        } else if (0 != leftVal && 0 != rightVal)
+        {
+            // Handle both hands grab case
+            HandleRotation();
+            canTranslate = false;
         }
 
-        // Determine if a new press has been encountered
-        bool rightNew = IsNewPress(prevRightVal, rightVal);
-        bool leftNew = IsNewPress(prevLeftVal, leftVal);
-
-        // Right hand is the dominant hand, let right hand resolve ties
-        if (rightNew)
-        {
-            referenceAnchor = rightAnchor;
-            UpdateValues(leftVal, rightVal);
-            return;
-        } else if (leftNew)
-        {
-            referenceAnchor = leftAnchor;
-            UpdateValues(leftVal, rightVal);
-            return;
-        }
-
-        // At least one hand is active, and neither are new
-        Vector3 anchorCurrentPosition = referenceAnchor.position;
-        Vector3 translateVector = translateMultiplier * (prevAnchorPosition - anchorCurrentPosition);
-
-        pulledTransform.Translate(translateVector);
-
-        UpdateValues(leftVal, rightVal);
+        UpdatePositions();
     }
 
-    private void UpdateValues(float leftVal, float rightVal)
+    private void UpdatePositions()
     {
-        prevLeftVal = leftVal;
-        prevRightVal = rightVal;
-        if (null != referenceAnchor)
-        {
-            prevAnchorPosition = referenceAnchor.position;
-        }
+        prevLeftWorld = leftAnchor.position;
+        prevRightWorld = rightAnchor.position;
+        prevLeftLocal = OVRInput.GetLocalControllerPosition(OVRInput.Controller.LTouch);
+        prevRightLocal = OVRInput.GetLocalControllerPosition(OVRInput.Controller.RTouch);
     }
 
-    private bool IsNewPress(float prevVal, float newVal)
+    private void HandleTranslation(Transform anchorToUse, Vector3 prevPosition)
     {
-        return 0 == prevVal && 0 != newVal;
+        Vector3 currentAnchorPosition = anchorToUse.position;
+        Vector3 translateVector = translateMultiplier * (prevPosition - currentAnchorPosition);
+        translateVector.y = 0;
+
+        manipulatedTransform.Translate(translateVector, Space.World);
     }
 
-    private bool IsNewRelease(float prevVal, float newVal)
+    private void HandleRotation()
     {
-        return 0 != prevVal && 0 == newVal;
+        Vector3 rightHandLocal = OVRInput.GetLocalControllerPosition(OVRInput.Controller.RTouch);
+        float angleRight = Vector3.SignedAngle(rightHandLocal, prevRightLocal, Vector3.up);
+
+        float rotationAngle = angleRight * rotationMuliplier * Time.deltaTime;
+
+        manipulatedTransform.Rotate(new Vector3(0, rotationAngle, 0));
     }
 }
