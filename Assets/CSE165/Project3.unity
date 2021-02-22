@@ -137,6 +137,18 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 400004, guid: 126d619cf4daa52469682f85c1378b4a, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 400004, guid: 126d619cf4daa52469682f85c1378b4a, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 400004, guid: 126d619cf4daa52469682f85c1378b4a, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 400004, guid: 126d619cf4daa52469682f85c1378b4a, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
       objectReference: {fileID: 0}
@@ -401,8 +413,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 74db9a6e837df724282b69967039c039, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  world: {fileID: 1779321786}
   raycastSelectorObject: {fileID: 1704785593}
   colliderSelectorObject: {fileID: 138165473}
+  gogoCutOff: 0.4
+  gogoRate: 15
+  realHand: {fileID: 1239489762}
+  gogoDistanceReference: {fileID: 808981160}
 --- !u!1 &428644799
 GameObject:
   m_ObjectHideFlags: 0
@@ -704,6 +721,7 @@ MonoBehaviour:
   secondaryFurniture: {fileID: 5348940005229493361, guid: 33430d6f59a38d84e8f9191a9b4ee019,
     type: 3}
   player: {fileID: 1250336768}
+  world: {fileID: 1779321786}
 --- !u!1001 &562021311
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1003,6 +1021,12 @@ Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 184962f8ada0e964aae16ad421bc99d6,
     type: 3}
   m_PrefabInstance: {fileID: 804406636}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &808981160 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 400002, guid: 126d619cf4daa52469682f85c1378b4a,
+    type: 3}
+  m_PrefabInstance: {fileID: 79919735}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &833870418
 PrefabInstance:
@@ -2079,6 +2103,8 @@ GameObject:
   m_Component:
   - component: {fileID: 1902630153}
   - component: {fileID: 1902630152}
+  - component: {fileID: 1902630155}
+  - component: {fileID: 1902630154}
   m_Layer: 0
   m_Name: ScriptHolder
   m_TagString: Untagged
@@ -2098,11 +2124,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d3e793e22c2b04a48823eab49fbdf9ce, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  controllerState: {fileID: 1902630155}
   manipulatedTransform: {fileID: 1250336768}
-  leftAnchor: {fileID: 960321826}
-  rightAnchor: {fileID: 1239489762}
-  translateMultiplier: 5
-  rotationMuliplier: 20
+  translateMultiplier: 1
+  rotationMuliplier: 1
 --- !u!4 &1902630153
 Transform:
   m_ObjectHideFlags: 0
@@ -2111,12 +2136,40 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1902630151}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.49941492, y: 0.59835994, z: 0.016789913}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1902630154
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1902630151}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 761c096d215c6a34bb3212887e865783, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  manipulatedTransform: {fileID: 1779321786}
+  controllerState: {fileID: 1902630155}
+--- !u!114 &1902630155
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1902630151}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0f2e49cc8debd964f8363030fbcc7a78, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  leftControllerTransform: {fileID: 960321826}
+  rightControllerTransform: {fileID: 1239489762}
 --- !u!1 &1941805958 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 2573726282031660673, guid: c48021f05f088ac4ab66903261799a4e,

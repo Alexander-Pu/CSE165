@@ -5,83 +5,67 @@ using UnityEngine;
 public class WorldPull : MonoBehaviour
 {
     [SerializeField]
+    private ControllerState controllerState;
+    [SerializeField]
     private Transform manipulatedTransform;
     [SerializeField]
-    private Transform leftAnchor;
-    [SerializeField]
-    private Transform rightAnchor;
-    [SerializeField]
-    private float translateMultiplier = 5;
+    private float translateMultiplier = 1;
     [SerializeField]
     private float rotationMuliplier = 1;
-    
-    private Vector3 prevLeftWorld;
-    private Vector3 prevRightWorld;
-    private Vector3 prevLeftLocal;
-    private Vector3 prevRightLocal;
-    private float leftVal = 0;
-    private float rightVal = 0;
-    private bool canTranslate = false;
 
-    void Start()
-    {
-        UpdatePositions();
-    }
+    private bool newRotatePivot = true;
+    private Vector3 rotatePivot;
 
     // Update is called once per frame
     void Update()
     {
-        leftVal = OVRInput.Get(OVRInput.Axis1D.PrimaryHandTrigger, OVRInput.Controller.LTouch);
-        rightVal = OVRInput.Get(OVRInput.Axis1D.PrimaryHandTrigger, OVRInput.Controller.RTouch);
+        bool leftHeld = controllerState.leftGripHeld;
+        bool rightHeld = controllerState.rightGripHeld;
 
-        if (0 == leftVal && 0 == rightVal) {
-            // Reset. Let translate happen
-            canTranslate = true;
-        } else if (canTranslate && (0 == leftVal || 0 == rightVal))
+        if (leftHeld != rightHeld)
         {
             // Handle single hand grab case
-            if (0 != rightVal)
+            if (rightHeld)
             {
-                HandleTranslation(rightAnchor, prevRightWorld);
-            } else
-            {
-                HandleTranslation(leftAnchor, prevLeftWorld);
+                HandleTranslation(controllerState.rightLocalPosition, controllerState.rightPrevLocalPosition);
             }
-            
-        } else if (0 != leftVal && 0 != rightVal)
+            else if (leftHeld)
+            {
+                HandleTranslation(controllerState.leftLocalPosition, controllerState.leftPrevLocalPosition);
+            }
+            newRotatePivot = true;
+        } else if (leftHeld && rightHeld)
         {
-            // Handle both hands grab case
             HandleRotation();
-            canTranslate = false;
+            newRotatePivot = false;
+        } else
+        {
+            newRotatePivot = true;
         }
-
-        UpdatePositions();
     }
 
-    private void UpdatePositions()
+    private void HandleTranslation(Vector3 currPosition, Vector3 prevPosition)
     {
-        prevLeftWorld = leftAnchor.position;
-        prevRightWorld = rightAnchor.position;
-        prevLeftLocal = OVRInput.GetLocalControllerPosition(OVRInput.Controller.LTouch);
-        prevRightLocal = OVRInput.GetLocalControllerPosition(OVRInput.Controller.RTouch);
-    }
-
-    private void HandleTranslation(Transform anchorToUse, Vector3 prevPosition)
-    {
-        Vector3 currentAnchorPosition = anchorToUse.position;
-        Vector3 translateVector = translateMultiplier * (prevPosition - currentAnchorPosition);
+        Vector3 translateVector = translateMultiplier * (prevPosition - currPosition);
         translateVector.y = 0;
 
-        manipulatedTransform.Translate(translateVector, Space.World);
+        manipulatedTransform.Translate(translateVector);
     }
 
     private void HandleRotation()
     {
-        Vector3 rightHandLocal = OVRInput.GetLocalControllerPosition(OVRInput.Controller.RTouch);
-        float angleRight = Vector3.SignedAngle(rightHandLocal, prevRightLocal, Vector3.up);
+        if (newRotatePivot)
+        {
+            rotatePivot = (controllerState.leftWorldPosition + controllerState.rightWorldPosition) / 2.0f;
+        }
 
-        float rotationAngle = angleRight * rotationMuliplier * Time.deltaTime;
+        Vector3 prevVec = controllerState.rightPrevLocalPosition - controllerState.leftPrevLocalPosition;
+        Vector3 currVec = controllerState.rightLocalPosition - controllerState.leftLocalPosition;
 
-        manipulatedTransform.Rotate(new Vector3(0, rotationAngle, 0));
+        float rotationAngle = Vector3.SignedAngle(currVec, prevVec, Vector3.up);
+
+        float rotationSpeed = rotationAngle * rotationMuliplier;
+        
+        manipulatedTransform.RotateAround(rotatePivot, Vector3.up, rotationSpeed);
     }
 }

@@ -5,6 +5,8 @@ using UnityEngine;
 public class ObjectMover : MonoBehaviour
 {
     [SerializeField]
+    private Transform world;
+    [SerializeField]
     private GameObject raycastSelectorObject;
     private RaycastSelector raycastSelector;
     [SerializeField]
@@ -13,6 +15,15 @@ public class ObjectMover : MonoBehaviour
     private bool useRaycastSelector = true;
     private float rightVal = 0;
     private GameObject heldObject = null;
+
+    [SerializeField]
+    private float gogoCutOff = .4f;
+    [SerializeField]
+    private float gogoRate = 15f;
+    [SerializeField]
+    private Transform realHand;
+    [SerializeField]
+    private Transform gogoDistanceReference;
 
     void Start()
     {
@@ -24,6 +35,8 @@ public class ObjectMover : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        GogoUpdate();
+
         float prevVal = rightVal;
         rightVal = OVRInput.Get(OVRInput.Axis1D.PrimaryIndexTrigger, OVRInput.Controller.RTouch);
         bool grabNew = 0 == prevVal && 0 != rightVal;
@@ -59,6 +72,31 @@ public class ObjectMover : MonoBehaviour
         }
     }
 
+    private void GogoUpdate()
+    {
+        if (useRaycastSelector)
+        {
+            transform.localPosition = new Vector3(0, 0, 0);
+            return;
+        }
+
+        Vector3 currPosition = realHand.transform.position;
+        Vector3 refPosition = gogoDistanceReference.position;
+
+        float distance = Vector3.Distance(currPosition, refPosition);
+
+        if (distance > gogoCutOff)
+        {
+            float offset = distance - gogoCutOff;
+            float desiredOffset = gogoRate * Mathf.Pow(offset, 2);
+            transform.localPosition = new Vector3(0, 0, desiredOffset);
+        }
+        else
+        {
+            transform.localPosition = new Vector3(0, 0, 0);
+        }
+    }
+
     private void GrabObject(GameObject newHeldObject)
     {
         heldObject = newHeldObject;
@@ -84,7 +122,7 @@ public class ObjectMover : MonoBehaviour
                 rigid.isKinematic = false;
             }
 
-            heldObject.transform.SetParent(null);
+            heldObject.transform.SetParent(world);
             heldObject = null;
         }
 

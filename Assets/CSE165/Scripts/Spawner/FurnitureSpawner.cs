@@ -10,6 +10,8 @@ public class FurnitureSpawner : MonoBehaviour
     private GameObject secondaryFurniture;
     [SerializeField]
     private Transform player;
+    [SerializeField]
+    private Transform world;
 
     private GameObject heldGameObject = null;
 
@@ -65,7 +67,7 @@ public class FurnitureSpawner : MonoBehaviour
             {
                 rigidBody.isKinematic = false;
             }
-            heldGameObject.transform.SetParent(null);
+            heldGameObject.transform.SetParent(world);
             heldGameObject = null;
         }
     }
